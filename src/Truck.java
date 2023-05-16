@@ -1,18 +1,6 @@
-public class Truck implements Service {
-    private String modelName;
-    private int wheelsCount;
-
+public class Truck extends Transport {
     public Truck(String modelName, int wheelsCount) {
-        this.modelName = modelName;
-        this.wheelsCount = wheelsCount;
-    }
-
-    public String getModelName() {
-        return modelName;
-    }
-
-    public int getWheelsCount() {
-        return wheelsCount;
+        super(modelName, wheelsCount);
     }
 
     public void updateTyre() {
@@ -28,12 +16,9 @@ public class Truck implements Service {
     }
 
     @Override
-    public void check() {
-        System.out.println("Обслуживаем " + this.modelName);
-        for (int i = 0; i < this.wheelsCount; i++) {
-            updateTyre();
-        }
-        checkEngine();
-        checkTrailer();
+    public void check(Truck truck) {
+        super.check(truck);
+        System.out.println("количество колес у  " + truck.getModelName()+":"+truck.getWheelsCount());
+
     }
 }

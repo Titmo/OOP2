@@ -6,19 +6,9 @@ public class Bicycle implements Service{
         this.modelName = modelName;
         this.wheelsCount = wheelsCount;
     }
-
-    public String getModelName() {
-        return modelName;
-    }
-
-    private int getWheelsCount() {
-        return wheelsCount;
-    }
-
     private void updateTyre() {
         System.out.println("Меняем покрышку");
     }
-
     @Override
     public void check() {
         System.out.println("Обслуживаем " + this.modelName);

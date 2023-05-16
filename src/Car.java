@@ -7,14 +7,6 @@ public class Car implements Service {
         this.wheelsCount = wheelsCount;
     }
 
-    public String getModelName() {
-        return modelName;
-    }
-
-    public int getWheelsCount() {
-        return wheelsCount;
-    }
-
     private void updateTyre() {
         System.out.println("Меняем покрышку");
     }

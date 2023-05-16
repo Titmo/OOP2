@@ -1,12 +1,34 @@
-public class Car {
-    public String modelName;
-    public int wheelsCount;
+public class Car implements Service {
+    private String modelName;
+    private int wheelsCount;
 
-    public void updateTyre() {
+    public Car(String modelName, int wheelsCount) {
+        this.modelName = modelName;
+        this.wheelsCount = wheelsCount;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public int getWheelsCount() {
+        return wheelsCount;
+    }
+
+    private void updateTyre() {
         System.out.println("Меняем покрышку");
     }
 
-    public void checkEngine() {
+    private void checkEngine() {
         System.out.println("Проверяем двигатель");
+    }
+
+    @Override
+    public void check() {
+        System.out.println("Обслуживаем " + this.modelName);
+        for (int i = 0; i < this.wheelsCount ; i++) {
+            updateTyre();
+        }
+        checkEngine();
     }
 }

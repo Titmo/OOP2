@@ -8,9 +8,9 @@ public class Bicycle extends Transport{
     }
 
     @Override
-    public void check(Bicycle bicycle) {
-        super.check(bicycle);
-        System.out.println("количество колес у  " + bicycle.getModelName()+":"+bicycle.getWheelsCount());
-
+    public void doService(Transport transport) {
+        for (int i = 0; i < transport.getWheelsCount() ; i++) {
+            updateTyre();
+        }
     }
 }
